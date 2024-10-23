@@ -1,0 +1,19 @@
+{
+    "name": "OfflineLeet",
+    "description": "Extension to download leetcode problems into offline Jupyter Notebooks",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_title": "Click to download",
+      "default_popup": "home.html",
+      "default_icon": "logo_offlineleet.png"
+    },
+    "permissions": ["activeTab", "downloads", "storage", "scripting", "tabs"],
+    "content_scripts": [{
+      "matches": ["*://*.leetcode.com/*"],
+      "js": ["content.js"]
+    }],
+    "background": {
+      "service_worker": "service_worker.js"
+    }
+  }
